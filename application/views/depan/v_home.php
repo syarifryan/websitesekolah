@@ -82,7 +82,7 @@
                                     <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Blog</a>
+                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Prestasi</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
@@ -185,7 +185,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Artikel Terbaru</h2>
+                <h2>BERITA</h2>
             </div>
         </div>
         <div class="row">

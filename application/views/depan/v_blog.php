@@ -35,13 +35,13 @@
               <div class="col-xs-6 col-sm-8 col-md-9">
                   <div class="header-top_address">
                       <div class="header-top_list">
-                          <span class="icon-phone"></span>00 55 22 66
-                      </div>
-                      <div class="header-top_list">
-                          <span class="icon-envelope-open"></span>info@mschool.com
-                      </div>
-                      <div class="header-top_list">
-                          <span class="icon-location-pin"></span>Padang, Sumatera Barat, INA. 11001
+                      <span class="icon-phone"></span>0812345
+                        </div>
+                        <div class="header-top_list">
+                            <span class="icon-envelope-open"></span>sdnkotakulon1@gmail.com
+                        </div>
+                        <div class="header-top_list">
+                            <span class="icon-location-pin"></span>Bondowoso, Jawa Timur, Indonesia. 68251
                       </div>
                   </div>
                   <div class="header-top_login2">
@@ -64,7 +64,7 @@
                       <button class="navbar-toggler navbar-toggler2 navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
                           <span class="icon-menu"></span>
                       </button>
-                      <a href="<?php echo site_url('');?>" class="navbar-brand nav-brand2"><img class="img img-responsive" width="200px;" src="<?php echo base_url().'theme/images/logo-dark.png'?>"></a>
+                      <a href="<?php echo site_url('');?>" class="navbar-brand nav-brand2"><img class="img img-responsive" width="75px;" src="<?php echo base_url().'theme/images/logo.png'?>"></a>
                       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                           <ul class="navbar-nav">
                               <li class="nav-item">
@@ -80,7 +80,7 @@
                                   <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('blog');?>">Blog</a>
+                                  <a class="nav-link" href="<?php echo site_url('blog');?>">Prestasi</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
