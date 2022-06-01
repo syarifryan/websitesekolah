@@ -84,15 +84,7 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="<?php echo base_url().'admin/agenda'?>">
-            <i class="fa fa-calendar"></i> <span>Agenda</span>
-            <span class="pull-right-container">
-              <small class="label pull-right"></small>
-            </span>
-          </a>
-        </li>
-        <li>
+        
           <a href="<?php echo base_url().'admin/pengumuman'?>">
             <i class="fa fa-volume-up"></i> <span>Pengumuman</span>
             <span class="pull-right-container">
@@ -102,7 +94,7 @@
         </li>
         <li>
           <a href="<?php echo base_url().'admin/files'?>">
-            <i class="fa fa-download"></i> <span>Download</span>
+            <i class="fa fa-download"></i> <span>PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
@@ -155,14 +147,7 @@
           </a>
         </li>
 
-        <li>
-          <a href="<?php echo base_url().'admin/komentar'?>">
-            <i class="fa fa-comments"></i> <span>Komentar</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green"><?php echo $jum_comment;?></small>
-            </span>
-          </a>
-        </li>
+        
 
          <li>
           <a href="<?php echo base_url().'administrator/logout'?>">

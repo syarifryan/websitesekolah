@@ -739,10 +739,10 @@ a {
    DETAILED CHART
    ============================================================== */
 .detailed_chart {
-  background: url(../images/chart_bg.png) no-repeat;
+  background: url(../images/bg.jpg) no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
-  padding: 97px 0; }
+  padding: 100px 0; }
 
 .chart-img img {
   margin: 21px 0 0;
