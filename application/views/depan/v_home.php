@@ -89,7 +89,7 @@
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('download');?>">PPDB</a>
+                                    <a class="nav-link" href="<?php echo site_url('ppdb');?>">PPDB</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('galeri');?>">Gallery</a>
@@ -117,8 +117,8 @@
                     <img class="d-block" src="<?php echo base_url().'theme/images/foto-3.jpeg'?>" alt="First slide">
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title">
-                            <h1>Bepikir Kreaftif &amp; Inovatif</h1>
-                            <h4>Bagi kami kreativitas merupakan gerbang masa depan.<br> kreativitas akan mendorong inovasi. <br> Itulah yang kami lakukan.</h4>
+                            <h1>Website SDN Kotakulon 1</h1>
+                            <h4>Foto bersama dengan kelas III<br> didepan kantor Kepala Sekolah <br> SDN Kotakulon 1.</h4>
                             <div class="slider-btn">
                                 <a href="<?php echo site_url('artikel');?>" class="btn btn-default">Learn more</a>
                             </div>
@@ -129,11 +129,9 @@
                     <img class="d-block" src="<?php echo base_url().'theme/images/foto-1.jpeg'?>" alt="Second slide">
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title">
-                            <h1>Guru Bekualitas Tinggi</h1>
-                            <h4>Guru merupakan faktor penting dalam proses belajar-mengajar.<br> Itulah kenapa kami mendatangkan guru-guru <br>terbaik dari berbagai penjuru.</h4>
-                            <div class="slider-btn">
-                                <a href="<?php echo site_url('guru');?>" class="btn btn-default">Learn more</a>
-                            </div>
+                            <h1>Website SDN Kotakulon 1</h1>
+                            <h4>Penghargaan atas prestasi-prestasi yang telah diraih oleh<br> siswa dan siswi SDN Kotakulon 1 <br>dari berbagai perlombaan.</h4>
+                            
                         </div>
                     </div>
                 </div>
@@ -141,11 +139,9 @@
                     <img class="d-block" src="<?php echo base_url().'theme/images/foto-5.jpeg'?>" alt="Third slide">
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title">
-                            <h1>Proses Belajar Interatif</h1>
-                            <h4>Kami membuat proses belajar mengajar menjadi lebih interatif.<br> dengan demikian siswa lebih menyukai <br>proses belajar.</h4>
-                            <div class="slider-btn">
-                                <a href="<?php echo site_url('galeri');?>" class="btn btn-default">Learn more</a>
-                            </div>
+                            <h1>Website SDN Kotakulon 1</h1>
+                            <h4>Ijen Geopark adalah event kegiatan yang diadakan oleh pemerintah <br> Kabupaten Bondowoso untuk memajukan <br>destinasi wisata setempat.</h4>
+                            
                         </div>
                     </div>
                 </div>
@@ -168,11 +164,11 @@
         <div class="row">
             <div class="col-md-8">
                <h2>Selamat Datang </h2>
-               <p>Official Website SDN KOTAKULON 1 ini kami sediakan untuk  </p>
+               <p>Official Website SDN KOTAKULON 1   </p>
 
             </div>
             <div class="col-md-4">
-                <img src="<?php echo base_url().'theme/images/201x183.png'?>" class="img-fluid about-img" alt="#">
+                <img src="<?php echo base_url().'theme/images/4x6.png'?>" class="img-fluid about-img" alt="#">
             </div>
         </div>
     </div>
@@ -285,7 +281,7 @@
                           <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
                           <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                           
-                          <li><a href="<?php echo site_url('download');?>">PPDB</a></li>
+                          <li><a href="<?php echo site_url('ppdb');?>">PPDB</a></li>
                       </ul>
                   </div>
                 </div>
@@ -298,7 +294,7 @@
                             <ul class="footer-social-icons">
                                 <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-envelope fa-en" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>
