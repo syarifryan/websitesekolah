@@ -6,6 +6,7 @@ class Ppdb extends CI_Controller{
             $url=base_url('administrator');
             redirect($url);
         };
+        $this->load->model('m_pengguna');
     }
     function index(){
         $this->load->view('admin/v_ppdb');
