@@ -85,7 +85,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo base_url().'admin/agenda'?>">
+          <a href="<?php echo base_url().''?>">
             <i class="fa fa-calendar"></i> <span>Agenda</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
@@ -155,14 +155,7 @@
           </a>
         </li>
 
-        <li>
-          <a href="<?php echo base_url().'admin/komentar'?>">
-            <i class="fa fa-comments"></i> <span>Komentar</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green"><?php echo $jum_comment;?></small>
-            </span>
-          </a>
-        </li>
+        
 
          <li>
           <a href="<?php echo base_url().'administrator/logout'?>">
