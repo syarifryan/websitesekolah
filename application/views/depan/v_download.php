@@ -82,10 +82,7 @@
                                   <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('agenda');?>">Agenda</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('download');?>">Download</a>
+                                  <a class="nav-link" href="<?php echo site_url('download');?>">PPDB</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('galeri');?>">Gallery</a>
