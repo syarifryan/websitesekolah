@@ -8,7 +8,7 @@
     <title>SDN KOTAKULON 1 - Selamat Datang di Website SDN KOTAKULON 1</title>
     <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon.png'?>">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
+    <link rel="stylesheet" href="<?php echo base_url().'theme/ppdb/assets/css/bootstrap.min.css'?>">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
     <!-- Font Awesome -->
@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick-theme.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
     <!-- Main CSS -->
+    
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <!-- <link href="theme/ppdb/assets/css/bootstrap.min.css" rel="stylesheet"> -->
+
+ 
+
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
     <?php
         function limit_words($string, $word_limit){
@@ -180,79 +187,74 @@
     </div>
 </section>
 <!--//END ABOUT -->
-<!--============================= OUR COURSES =============================-->
-<section class="our_courses">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>BERITA</h2>
-            </div>
-        </div>
-        <div class="row">
-          <?php foreach ($berita->result() as $row) :?>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="courses_box mb-4">
-                    <div class="course-img-wrap">
-                        <img src="<?php echo base_url().'assets/images/'.$row->tulisan_gambar;?>" class="img-fluid" alt="courses-img">
-                    </div>
-                    <!-- // end .course-img-wrap -->
-                    <a href="<?php echo site_url('artikel/'.$row->tulisan_slug);?>" class="course-box-content">
-                        <h3 style="text-align:center;"><?php echo $row->tulisan_judul;?></h3>
-                    </a>
-                </div>
-            </div>
-          <?php endforeach;?>
-        </div> <br>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <a href="<?php echo site_url('artikel');?>" class="btn btn-default btn-courses">View More</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!--//END OUR COURSES -->
-<!--============================= EVENTS =============================-->
-<section class="event">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="event-img2">
-                <?php foreach ($pengumuman->result() as $row) :?>
-                <div class="row">
-                    <div class="col-sm-3"> <img src="<?php echo base_url().'theme/images/announcement-icon.png'?>" class="img-fluid" alt="event-img"></div><!-- // end .col-sm-3 -->
-                    <div class="col-sm-9"> <h3><a href="<?php echo site_url('pengumuman');?>"><?php echo $row->pengumuman_judul;?></a></h3>
-                      <span><?php echo $row->tanggal;?></span>
-                      <p><?php echo limit_words($row->pengumuman_deskripsi,10).'...';?></p>
 
-                    </div><!-- // end .col-sm-7 -->
-                </div><!-- // end .row -->
-                <?php endforeach;?>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-md-12">
-                      <?php foreach ($agenda->result() as $row):?>
-                        <div class="event_date">
-                            <div class="event-date-wrap">
-                                <p><?php echo date("d", strtotime($row->agenda_tanggal));?></p>
-                                <span><?php echo date("M. y", strtotime($row->agenda_tanggal));?></span>
-                            </div>
-                        </div>
-                        <div class="date-description">
-                            <h3><a href="<?php echo site_url('agenda');?>"><?php echo $row->agenda_nama;?></a></h3>
-                            <p><?php echo limit_words($row->agenda_deskripsi,10).'...';?></p>
-                            <hr class="event_line">
-                        </div>
-                        <?php endforeach;?>
+<!-- Content -->
+<div class="container-xxl py-5">
+            <div class="container">
+                <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">PENERIMAAN PESERTA DIDIK BARU</h1>
+                <h2 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">SDN KOTAKULON 1</h2>
+                 <form method="POST" action="#!">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="email" placeholder="Your Email">
+                                            <label for="namalengkap">Nama Lengkap</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="email" placeholder="Your Email">
+                                            <label for="namapanggilan">Nama Panggilan</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="alamat" placeholder="Alamat">
+                                            <label for="alamat">Alamat</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="ttl" placeholder="TTL">
+                                            <label for="ttl">Tempat, Tanggal Lahir</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <label for="pesan">Pesan</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ijazah">Ijazah TK</label>
+                                        <input type="file" class="form-control" name="ijazah" aria-describedby="ijazahHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="akta">Akta Kelahiran</label>
+                                        <input type="file" class="form-control" name="akta" aria-describedby="aktaHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ktp">KTP Orang Tua</label>
+                                        <input type="file" class="form-control" name="ktp" aria-describedby="ktpHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kk">Kartu Keluarga</label>
+                                        <input type="file" class="form-control" name="kk" aria-describedby="kkHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sertifikat">Sertifikat Penghargaan (jika ada)</label>
+                                        <input type="file" class="form-control" name="sertifikat" aria-describedby="sertifikatHelp">
+                                    </div>
 
-                    </div>
-                </div>
-
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Kirim</button>
+                                    </div>
+                                </div>
+                 </form>
             </div>
-        </div>
-    </div>
-</section>
+</div>
+<!-- END CONTENT -->>
+
 <!--//END EVENTS -->
 <!--============================= DETAILED CHART =============================-->
 <div class="detailed_chart">
@@ -273,15 +275,6 @@
                 </div>
                 <div class="chart-text">
                     <p><span class="counter"><?php echo $tot_siswa;?></span> Siswa
-                    </p>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 chart_top">
-                <div class="chart-img">
-                    <img src="<?php echo base_url().'theme/images/chart-icon_3.png'?>" class="img-fluid" alt="chart_icon">
-                </div>
-                <div class="chart-text">
-                    <p><span class="counter"><?php echo $tot_files;?></span> Download
                     </p>
                 </div>
             </div>
