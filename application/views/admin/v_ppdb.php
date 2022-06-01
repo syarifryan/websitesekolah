@@ -85,7 +85,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo base_url().'admin/files'?>">
+          <a href="<?php echo base_url().'admin/ppdb'?>">
             <i class="fa fa-download"></i> <span>PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
@@ -169,86 +169,17 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Guru
+        Penerimaan Peserta Didik Baru
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Guru</li>
+        <li class="active">PPDB</li>
       </ol>
     </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
+    
 
-          <div class="box">
-            <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add Guru</a>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-striped" style="font-size:13px;">
-                <thead>
-                <tr>
-          					<th>Photo</th>
-          					<th>NIP</th>
-          					<th>Nama</th>
-          					<th>Tempat/Tgl Lahir</th>
-          					<th>Jenis Kelamin</th>
-                    <th>Mata Pelajaran</th>
-                    <th style="text-align:right;">Aksi</th>
-                </tr>
-                </thead>
-                <tbody>
-          				<?php
-          					$no=0;
-          					foreach ($data->result_array() as $i) :
-          					   $no++;
-          					   $id=$i['guru_id'];
-          					   $nip=$i['guru_nip'];
-          					   $nama=$i['guru_nama'];
-          					   $jenkel=$i['guru_jenkel'];
-          					   $tmp_lahir=$i['guru_tmp_lahir'];
-          					   $tgl_lahir=$i['guru_tgl_lahir'];
-                       $mapel=$i['guru_mapel'];
-                       $photo=$i['guru_photo'];
-
-                    ?>
-                <tr>
-                  <?php if(empty($photo)):?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
-                  <?php else:?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/'.$photo;?>"></td>
-                  <?php endif;?>
-                  <td><?php echo $nip;?></td>
-        				  <td><?php echo $nama;?></td>
-                  <td><?php echo $tmp_lahir.', '.$tgl_lahir;?></td>
-                  <?php if($jenkel=='L'):?>
-                  <td>Laki-Laki</td>
-                  <?php else:?>
-                  <td>Perempuan</td>
-                  <?php endif;?>
-                  <td><?php echo $mapel;?></td>
-                  <td style="text-align:right;">
-                        <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
-                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
-                  </td>
-                </tr>
-				<?php endforeach;?>
-                </tbody>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-    </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
