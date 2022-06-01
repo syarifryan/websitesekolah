@@ -87,9 +87,9 @@
             </span>
           </a>
         </li>
-        <li class="active">
+        <li>
           <a href="<?php echo base_url().'admin/files'?>">
-            <i class="fa fa-download"></i> <span>Download</span>
+            <i class="fa fa-download"></i> <span>PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>

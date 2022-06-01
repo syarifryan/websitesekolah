@@ -326,8 +326,8 @@
                           <li><a href="<?php echo site_url('guru');?>">Guru</a></li>
                           <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
                           <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
-                          <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
-                          <li><a href="<?php echo site_url('download');?>">Download</a></li>
+                          
+                          <li><a href="<?php echo site_url('download');?>">PPDB</a></li>
                       </ul>
                   </div>
                 </div>
