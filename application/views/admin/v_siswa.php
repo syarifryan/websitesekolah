@@ -125,7 +125,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Siswa</a></li>
-            <li><a href="#"><i class="fa fa-star-o"></i> Prestasi Siswa</a></li>
+            
 
           </ul>
         </li>
@@ -243,8 +243,9 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0
+     
     </div>
+    
   </footer>
 
   <!-- Control Sidebar -->

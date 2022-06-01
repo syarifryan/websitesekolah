@@ -105,7 +105,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="contact-title">
-                    <h2>Download</h2>
+                    <h2>Penerimaan Peserta Didik Baru</h2>
                 </div>
             </div>
         </div>

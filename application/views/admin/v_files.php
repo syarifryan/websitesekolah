@@ -128,7 +128,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Siswa</a></li>
-            <li><a href="#"><i class="fa fa-star-o"></i> Prestasi Siswa</a></li>
+            
 
           </ul>
         </li>
@@ -164,12 +164,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Download
+        Penerimaan Peserta Didik Baru
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Download</li>
+        <li class="active">PPDB</li>
       </ol>
     </section>
 
@@ -237,7 +237,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0
+      
     </div>
   </footer>
 

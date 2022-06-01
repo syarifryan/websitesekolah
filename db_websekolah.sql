@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2022 at 12:42 PM
+-- Generation Time: Jun 01, 2022 at 01:30 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -39,15 +39,6 @@ CREATE TABLE `tbl_agenda` (
   `agenda_keterangan` varchar(200) DEFAULT NULL,
   `agenda_author` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_agenda`
---
-
-INSERT INTO `tbl_agenda` (`agenda_id`, `agenda_nama`, `agenda_tanggal`, `agenda_deskripsi`, `agenda_mulai`, `agenda_selesai`, `agenda_tempat`, `agenda_waktu`, `agenda_keterangan`, `agenda_author`) VALUES
-(1, 'Penyembelihan Hewan Kurban Idul Adha 2017', '2017-01-22 06:18:01', 'Idul Adha yang biasa disebut lebaran haji atapun lebaran kurban sangat identik dengan penyembelihan hewan kurban. M-Sekolah tahun ini juga melakukan penyembelihan hewan kurban. Yang rencananya akan dihadiri oleh guru-guru, siswa dan pengurus OSIS.', '2017-01-22', '2017-01-22', 'M-Sekolah', '08.00 - 11.00 WIB', 'Dihadiri oleh guru-guru, siswa dan pengurus OSIS', 'M Fikri Setiadi'),
-(2, 'Peluncuran Website Resmi M-Sekolah', '2017-01-22 06:26:33', 'Peluncuran website resmi  M-Sekolah, sebagai media informasi dan akademik online untuk pelayanan pendidikan yang lebih baik kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat.', '2017-01-04', '2017-01-04', 'M-Sekolah', '07.30 - 12.00 WIB', '-', 'M Fikri Setiadi'),
-(3, 'Penerimaan Raport Semester Ganjil Tahun Ajaran 2017-2018', '2017-01-22 06:29:49', 'Berakhirnya semester ganjil tahun pelajaran 2016-2017, ditandai dengan pembagian laporan hasil belajar.', '2017-02-17', '2017-02-17', 'M-Sekolah', '07.30 - 12.00 WIB', 'Untuk kelas XI dan XII, pembagian raport dimulai pukul 07.30 WIB. Sedangkan untuk kelas X pada pukul 09.00 WIB. Raport diambil oleh orang tua/wali murid masing-masing.', 'M Fikri Setiadi');
 
 -- --------------------------------------------------------
 
@@ -89,23 +80,6 @@ CREATE TABLE `tbl_files` (
   `file_download` int(11) DEFAULT 0,
   `file_data` varchar(120) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_files`
---
-
-INSERT INTO `tbl_files` (`file_id`, `file_judul`, `file_deskripsi`, `file_tanggal`, `file_oleh`, `file_download`, `file_data`) VALUES
-(2, 'Dasar-dasar CSS', 'Modul dasar-dasar CSS 3. Modul ini membantu anda untuk memahami struktur dasar CSS', '2017-01-23 04:30:01', 'Drs. Joko', 0, 'ab9a183ff240deadbedaff78e639af2f.pdf'),
-(3, '14 Teknik Komunikasi Yang Paling Efektif', 'Ebook 14 teknik komunikasi paling efektif membantu anda untuk berkomunikasi dengan baik dan benar', '2017-01-23 15:26:06', 'Drs. Joko', 0, 'ab2cb34682bd94f30f2347523112ffb9.pdf'),
-(4, 'Bagaimana Membentuk Pola Pikir yang Baru', 'Ebook ini membantu anda membentuk pola pikir baru.', '2017-01-23 15:27:07', 'Drs. Joko', 0, '30f588eb5c55324f8d18213f11651855.pdf'),
-(5, '7 Tips Penting mengatasi Kritik', '7 Tips Penting mengatasi Kritik', '2017-01-23 15:27:44', 'Drs. Joko', 0, '329a62b25ad475a148e1546aa3db41de.docx'),
-(6, '8 Racun dalam kehidupan kita', '8 Racun dalam kehidupan kita', '2017-01-23 15:28:17', 'Drs. Joko', 0, '8e38ad4948ba13758683dea443fbe6be.docx'),
-(7, 'Jurnal Teknolgi Informasi', 'Jurnal Teknolgi Informasi', '2017-01-25 03:18:53', 'Gunawan, S.Pd', 0, '87ae0f009714ddfdd79e2977b2a64632.pdf'),
-(8, 'Jurnal Teknolgi Informasi 2', 'Jurnal Teknolgi Informasi', '2017-01-25 03:19:22', 'Gunawan, S.Pd', 0, 'c4e966ba2c6e142155082854dc5b3602.pdf'),
-(9, 'Naskah Publikasi IT', 'Naskah Teknolgi Informasi', '2017-01-25 03:21:04', 'Gunawan, S.Pd', 0, '71380b3cf16a17a02382098c028ece9c.pdf'),
-(10, 'Modul Teknologi Informasi', 'Modul Teknologi Informasi', '2017-01-25 03:22:08', 'Gunawan, S.Pd', 0, '029143a3980232ab2900d94df36dbb0c.pdf'),
-(11, 'Modul Teknologi Informasi Part II', 'Modul Teknologi Informasi', '2017-01-25 03:22:54', 'Gunawan, S.Pd', 0, 'ea8f3f732576083156e509657614f551.pdf'),
-(12, 'Modul Teknologi Informasi Part III', 'Modul Teknologi Informasi', '2017-01-25 03:23:21', 'Gunawan, S.Pd', 0, 'c5e5e7d16e4cd6c3d22c11f64b0db2af.pdf');
 
 -- --------------------------------------------------------
 
@@ -182,7 +156,7 @@ CREATE TABLE `tbl_inbox` (
 
 INSERT INTO `tbl_inbox` (`inbox_id`, `inbox_nama`, `inbox_email`, `inbox_kontak`, `inbox_pesan`, `inbox_tanggal`, `inbox_status`) VALUES
 (9, 'asdasd', 'arifkurniawanajah334@gmail.com', '123123123', 'asdasdasdas', '2022-06-01 10:37:43', 0),
-(10, 'dasdasd', 'arifkurniawanajah334@gmail.com', '123123', 'asdasdasd', '2022-06-01 10:40:06', 1);
+(10, 'dasdasd', 'arifkurniawanajah334@gmail.com', '123123', 'asdasdasd', '2022-06-01 10:40:06', 0);
 
 -- --------------------------------------------------------
 
@@ -343,7 +317,7 @@ CREATE TABLE `tbl_pengunjung` (
 --
 
 INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung_ip`, `pengunjung_perangkat`) VALUES
-(933, '2022-06-01 10:30:26', '::1', 'Chrome');
+(934, '2022-06-01 11:05:46', '::1', 'Chrome');
 
 -- --------------------------------------------------------
 
@@ -365,8 +339,6 @@ CREATE TABLE `tbl_siswa` (
 --
 
 INSERT INTO `tbl_siswa` (`siswa_id`, `siswa_nis`, `siswa_nama`, `siswa_jenkel`, `siswa_kelas_id`, `siswa_photo`) VALUES
-(1, '9287482', 'Alvaro Sanchez', 'L', 8, '083d547659a2d4bb15c0322d15955da5.png'),
-(2, '9287483', 'Ririn Cantika', 'P', 8, '74eec6ad37550cc12fe8fa83d46878af.jpg'),
 (4, '12345', 'Ryan', 'L', 1, '2902ba3efacde570b880e7019ca59349.png'),
 (5, '12345', 'Arif', 'P', 1, '9146d8b3f6fd0570165f2db6eaca6fd6.png'),
 (6, '12323', 'Rosyed', 'P', 4, 'fdcae39edfd66131ea84388c50943301.jpg'),
@@ -413,7 +385,7 @@ CREATE TABLE `tbl_tulisan` (
 --
 
 INSERT INTO `tbl_tulisan` (`tulisan_id`, `tulisan_judul`, `tulisan_isi`, `tulisan_tanggal`, `tulisan_kategori_id`, `tulisan_kategori_nama`, `tulisan_views`, `tulisan_gambar`, `tulisan_pengguna_id`, `tulisan_author`, `tulisan_img_slider`, `tulisan_slug`) VALUES
-(25, 'Prestasi SDN Kotakulon 1', '<p>Prestasi yang di dapat siswa dan siswi SDN Kotakulon 1</p>\r\n\r\n<p><br />\r\n.................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p><br />\r\n.................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p><br />\r\n.................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p>..................................................</p>\r\n', '2018-08-08 13:26:08', 2, 'Prestasi', 7, 'ded7f8694c61f03bd32224b779896d11.jpeg', 1, 'Ryan', 0, 'prestasi-sdn-kotakulon-1');
+(25, 'Prestasi SDN Kotakulon 1', '<p>Prestasi yang di dapat siswa dan siswi SDN Kotakulon 1</p>\r\n\r\n<p><br />\r\n.................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p><br />\r\n.................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p><br />\r\n.................................................</p>\r\n\r\n<p>..................................................</p>\r\n\r\n<p>..................................................</p>\r\n', '2018-08-08 13:26:08', 2, 'Prestasi', 11, 'ded7f8694c61f03bd32224b779896d11.jpeg', 1, 'Ryan', 0, 'prestasi-sdn-kotakulon-1');
 
 --
 -- Indexes for dumped tables
@@ -527,12 +499,6 @@ ALTER TABLE `tbl_tulisan`
 --
 
 --
--- AUTO_INCREMENT for table `tbl_agenda`
---
-ALTER TABLE `tbl_agenda`
-  MODIFY `agenda_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `tbl_album`
 --
 ALTER TABLE `tbl_album`
@@ -602,7 +568,7 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=934;
+  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=935;
 
 --
 -- AUTO_INCREMENT for table `tbl_siswa`
