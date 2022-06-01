@@ -336,9 +336,9 @@
                 <div class="col-md-3">
                     <div class="address">
                         <h3>Hubungi Kami</h3>
-                        <p><span>Alamat: </span> Padang, Sumatera Barat, INA. 11001</p>
-                        <p>Email : info@mschool.com
-                            <br> Phone : +91 555 668 986</p>
+                        <p><span>Alamat: </span> Bondowoso, Jawa Timur, Indonesia. 68251</p>
+                        <p>Email : sdnkotakulon1@gmail.com
+                            <br> Phone : 0812345</p>
                             <ul class="footer-social-icons">
                                 <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>

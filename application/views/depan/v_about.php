@@ -109,7 +109,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <h2>Kata Sambutan</h2>
+                <h2>Sambutan Kepala Sekolah</h2>
                 <p>Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa atas karunia dan hidayah-Nya,
                   sehingga kita semua dapat membaktikan segala hal yang kita miliki untuk kemajuan dunia pendidikan.
                   Apapun bentuk dan sumbangsih yang kita berikan, jika dilandasi niat yang tulus tanpa memandang imbalan
@@ -118,48 +118,18 @@
                 </p>
                 <p>Hal ini seiring dengan penguasaan teknologi untuk dimanfaatkan sebaik mungkin,
                   sehingga menciptakan iklim kondusif dalam ranah keilmuan. Dengan konsep yang kontekstual dan efektif,
-                  kami mengejewantahkan nilai-nilai pendidikan yang tertuang dalam visi misi M-School,
+                  kami mengejewantahkan nilai-nilai pendidikan yang tertuang dalam visi misi SDN Kotakulon 1,
                   sebagai panduan hukum dalam menjabarkan tujuan hakiki pendidikan.
                 </p>
                 </div>
                 <div class="col-md-5">
-                    <img src="<?php echo base_url().'theme/images/welcome-img.jpg'?>" class="img-fluid" alt="#">
+                    <img src="<?php echo base_url().'theme/images/4x6.jpg'?>" class="img-fluid" alt="#">
                 </div>
             </div>
         </div>
     </section>
     <!--//END WELCOME TITLE -->
-    <!--============================= TESTIMONIAL =============================-->
-    <section class="testimonial">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Testimonial</h2>
-                </div>
-                <div class="col-md-12">
-                    <div class="single-item">
-                        <div class="quote">
-                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            <p class="quote_text">MSCHOOL benar-benar mengagumkan. Saya sangat senang bisa bergabung dengan MSCHOOL dan menjadi siswa terbaik tahun 2018.</p>
-                            <div class="testi-img_block">
-                                <img src="<?php echo base_url().'theme/images/student-1.png'?>" class="img-fluid" alt="#">
-                                <p><span>Hernandez Alvaro</span>Siswa Terbaik 2018</p>
-                            </div>
-                        </div>
-                        <div class="quote">
-                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            <p class="quote_text">MSCHOOL benar-benar mengagumkan. Saya sangat senang bisa bergabung dengan MSCHOOL dan menjadi siswa terbaik tahun 2017. </p>
-                            <div class="testi-img_block">
-                                <img src="<?php echo base_url().'theme/images/student-2.png'?>" class="img-fluid" alt="#">
-                                <p><span>Elanoar Rigby</span>Siswa Terbaik 2017</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--//END TESTIMONIAL -->
+    
     <!--============================= DETAILED CHART =============================-->
     <div class="detailed_chart">
         <div class="container">
@@ -206,72 +176,72 @@
 
         <!--============================= FOOTER =============================-->
         <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="foot-logo">
-                            <a href="<?php echo site_url();?>">
-                                <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo">
-                            </a>
-                            <p><?php echo date('Y');?> © copyright by <a href="http://mfikri.com" target="_blank">M Fikri</a>. <br>All rights reserved.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="sitemap">
-                                <h3>Menu Utama</h3>
-                                <ul>
-                                    <li><a href="<?php echo site_url();?>">Home</a></li>
-                                    <li><a href="<?php echo site_url('about');?>">About</a></li>
-                                    <li><a href="<?php echo site_url('artikel');?>">Blog </a></li>
-                                    <li><a href="<?php echo site_url('galeri');?>">Gallery</a></li>
-                                    <li><a href="<?php echo site_url('contact');?>">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="sitemap">
-                              <h3>Akademik</h3>
-                              <ul>
-                                  <li><a href="<?php echo site_url('guru');?>">Guru</a></li>
-                                  <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
-                                  <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
-                                  <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
-                                  <li><a href="<?php echo site_url('download');?>">Download</a></li>
-                              </ul>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="address">
-                                <h3>Hubungi Kami</h3>
-                                <p><span>Alamat: </span> Padang, Sumatera Barat, INA. 11001</p>
-                                <p>Email : info@mschool.com
-                                    <br> Phone : +91 555 668 986</p>
-                                    <ul class="footer-social-icons">
-                                        <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="foot-logo">
+                    <a href="<?php echo site_url();?>">
+                        <img src="<?php echo base_url().'theme/images/logo.png'?>" class="img-fluid" alt="footer_logo">
+                    </a>
+                    <p><?php echo date('Y');?> ©  <a href="http://sim-online.polije.ac.id" target="_blank">SDN Kotakulon 1</a>. <br>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="sitemap">
+                        <h3>Menu Utama</h3>
+                        <ul>
+                            <li><a href="<?php echo site_url();?>">Home</a></li>
+                            <li><a href="<?php echo site_url('about');?>">About</a></li>
+                            <li><a href="<?php echo site_url('artikel');?>">Blog </a></li>
+                            <li><a href="<?php echo site_url('galeri');?>">Gallery</a></li>
+                            <li><a href="<?php echo site_url('contact');?>">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="sitemap">
+                      <h3>Akademik</h3>
+                      <ul>
+                          <li><a href="<?php echo site_url('guru');?>">Guru</a></li>
+                          <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
+                          <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
+                          <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
+                          <li><a href="<?php echo site_url('download');?>">Download</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="address">
+                        <h3>Hubungi Kami</h3>
+                        <p><span>Alamat: </span> Bondowoso, Jawa Timur, Indonesia. 68251</p>
+                        <p>Email : sdnkotakulon1@gmail.com
+                            <br> Phone : 0812345</p>
+                            <ul class="footer-social-icons">
+                                <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                </footer>
-                <!--//END FOOTER -->
-                <!-- jQuery, Bootstrap JS. -->
-                <script src="<?php echo base_url().'theme/js/jquery.min.js'?>"></script>
-                <script src="<?php echo base_url().'theme/js/tether.min.js'?>"></script>
-                <script src="<?php echo base_url().'theme/js/bootstrap.min.js'?>"></script>
-                <!-- Plugins -->
-                <script src="<?php echo base_url().'theme/js/slick.min.js'?>"></script>
-                <script src="<?php echo base_url().'theme/js/waypoints.min.js'?>"></script>
-                <script src="<?php echo base_url().'theme/js/counterup.min.js'?>"></script>
-                <script src="<?php echo base_url().'theme/js/owl.carousel.min.js'?>"></script>
-                <script src="<?php echo base_url().'theme/js/validate.js'?>"></script>
-                <script src="<?php echo base_url().'theme/js/tweetie.min.js'?>"></script>
-                <!-- Subscribe -->
-                <script src="<?php echo base_url().'theme/js/subscribe.js'?>"></script>
-                <!-- Script JS -->
-                <script src="<?php echo base_url().'theme/js/script.js'?>"></script>
-            </body>
+                </div>
+            </div>
+        </footer>
+        <!--//END FOOTER -->
+        <!-- jQuery, Bootstrap JS. -->
+        <script src="<?php echo base_url().'theme/js/jquery.min.js'?>"></script>
+        <script src="<?php echo base_url().'theme/js/tether.min.js'?>"></script>
+        <script src="<?php echo base_url().'theme/js/bootstrap.min.js'?>"></script>
+        <!-- Plugins -->
+        <script src="<?php echo base_url().'theme/js/slick.min.js'?>"></script>
+        <script src="<?php echo base_url().'theme/js/waypoints.min.js'?>"></script>
+        <script src="<?php echo base_url().'theme/js/counterup.min.js'?>"></script>
+        <script src="<?php echo base_url().'theme/js/owl.carousel.min.js'?>"></script>
+        <script src="<?php echo base_url().'theme/js/validate.js'?>"></script>
+        <script src="<?php echo base_url().'theme/js/tweetie.min.js'?>"></script>
+        <!-- Subscribe -->
+        <script src="<?php echo base_url().'theme/js/subscribe.js'?>"></script>
+        <!-- Script JS -->
+        <script src="<?php echo base_url().'theme/js/script.js'?>"></script>
+    </body>
 
-            </html>
+    </html>

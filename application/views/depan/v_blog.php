@@ -174,9 +174,9 @@
             <div class="col-md-3">
                 <div class="foot-logo">
                     <a href="<?php echo site_url();?>">
-                        <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo">
+                        <img src="<?php echo base_url().'theme/images/logo.png'?>" class="img-fluid" alt="footer_logo">
                     </a>
-                    <p><?php echo date('Y');?> © copyright by <a href="http://mfikri.com" target="_blank">M Fikri</a>. <br>All rights reserved.</p>
+                    <p><?php echo date('Y');?> ©  <a href="http://sim-online.polije.ac.id" target="_blank">SDN Kotakulon 1</a>. <br>Lorem ipsum dolor sit amet.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -206,9 +206,9 @@
                 <div class="col-md-3">
                     <div class="address">
                         <h3>Hubungi Kami</h3>
-                        <p><span>Alamat: </span> Padang, Sumatera Barat, INA. 11001</p>
-                        <p>Email : info@mschool.com
-                            <br> Phone : +91 555 668 986</p>
+                        <p><span>Alamat: </span> Bondowoso, Jawa Timur, Indonesia. 68251</p>
+                        <p>Email : sdnkotakulon1@gmail.com
+                            <br> Phone : 0812345</p>
                             <ul class="footer-social-icons">
                                 <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
@@ -225,6 +225,9 @@
         <script src="<?php echo base_url().'theme/js/tether.min.js'?>"></script>
         <script src="<?php echo base_url().'theme/js/bootstrap.min.js'?>"></script>
         <!-- Plugins -->
+        <script src="<?php echo base_url().'theme/js/slick.min.js'?>"></script>
+        <script src="<?php echo base_url().'theme/js/waypoints.min.js'?>"></script>
+        <script src="<?php echo base_url().'theme/js/counterup.min.js'?>"></script>
         <script src="<?php echo base_url().'theme/js/owl.carousel.min.js'?>"></script>
         <script src="<?php echo base_url().'theme/js/validate.js'?>"></script>
         <script src="<?php echo base_url().'theme/js/tweetie.min.js'?>"></script>
