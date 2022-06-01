@@ -103,7 +103,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="contact-title">
-                    <h2>Hubungi Kami</h2>
+                    <h2>HUBUNGI KAMI</h2>
                 </div>
             </div>
         </div>
