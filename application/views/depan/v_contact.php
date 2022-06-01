@@ -143,7 +143,7 @@
                                 <div class="contact-details">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                     <h6>Alamat</h6>
-                                    <p> Curahdami, Bondowoso
+                                    <p> Kotakulon, Bondowoso
                                         <br> Jawa Timur, Indonesia
                                         <br> 68251</p>
                                     </div>

@@ -82,7 +82,7 @@
                                     <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Prestasi</a>
+                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Berita</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
@@ -216,34 +216,14 @@
                     <div class="col-sm-3"> <img src="<?php echo base_url().'theme/images/announcement-icon.png'?>" class="img-fluid" alt="event-img"></div><!-- // end .col-sm-3 -->
                     <div class="col-sm-9"> <h3><a href="<?php echo site_url('pengumuman');?>"><?php echo $row->pengumuman_judul;?></a></h3>
                       <span><?php echo $row->tanggal;?></span>
-                      <p><?php echo limit_words($row->pengumuman_deskripsi,10).'...';?></p>
+                      <p><?php echo limit_words($row->pengumuman_deskripsi,12).'...';?></p>
 
                     </div><!-- // end .col-sm-7 -->
                 </div><!-- // end .row -->
                 <?php endforeach;?>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-md-12">
-                      <?php foreach ($agenda->result() as $row):?>
-                        <div class="event_date">
-                            <div class="event-date-wrap">
-                                <p><?php echo date("d", strtotime($row->agenda_tanggal));?></p>
-                                <span><?php echo date("M. y", strtotime($row->agenda_tanggal));?></span>
-                            </div>
-                        </div>
-                        <div class="date-description">
-                            <h3><a href="<?php echo site_url('agenda');?>"><?php echo $row->agenda_nama;?></a></h3>
-                            <p><?php echo limit_words($row->agenda_deskripsi,10).'...';?></p>
-                            <hr class="event_line">
-                        </div>
-                        <?php endforeach;?>
-
-                    </div>
-                </div>
-
-            </div>
+           
         </div>
     </div>
 </section>
@@ -267,7 +247,7 @@
                         <ul>
                             <li><a href="<?php echo site_url();?>">Home</a></li>
                             <li><a href="<?php echo site_url('about');?>">About</a></li>
-                            <li><a href="<?php echo site_url('artikel');?>">Blog </a></li>
+                            <li><a href="<?php echo site_url('artikel');?>">Berita </a></li>
                             <li><a href="<?php echo site_url('galeri');?>">Gallery</a></li>
                             <li><a href="<?php echo site_url('contact');?>">Contact</a></li>
                         </ul>
@@ -294,7 +274,7 @@
                             <ul class="footer-social-icons">
                                 <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-envelope fa-en" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>

@@ -76,7 +76,7 @@
                                   <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('blog');?>">Prestasi</a>
+                                  <a class="nav-link" href="<?php echo site_url('blog');?>">Berita</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
@@ -108,6 +108,13 @@
                     <h2 class="mb-2">Siswa dan Siswi</h2>
                     <h3 class="mb-3 text-center">SDN Kotakulon 1</h3>
                 </div>
+                <div class="col-md-4">
+                    <form action="<?php echo site_url('siswa/search');?>" method="get">
+                        <input type="text" name="keyword" placeholder="Search" class="siswa-search" required>
+                        <button type="submit" class="btn btn-warning btn-siswasearch">SEARCH</button>
+                    </form>
+                </div>
+                
             </div>
             <div class="row">
                 <?php foreach ($data->result() as $row) : ?>
@@ -202,3 +209,6 @@
     </body>
 
     </html>
+
+
+    

@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Administrator | Download</title>
+  <title>Komentar</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="shorcut icon" type="text/css" href="<?php echo base_url().'assets/images/favicon.png'?>">
@@ -78,7 +78,14 @@
             </span>
           </a>
         </li>
-        
+        <li>
+          <a href="<?php echo base_url().'admin/agenda'?>">
+            <i class="fa fa-calendar"></i> <span>Agenda</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
         <li>
           <a href="<?php echo base_url().'admin/pengumuman'?>">
             <i class="fa fa-volume-up"></i> <span>Pengumuman</span>
@@ -89,7 +96,7 @@
         </li>
         <li>
           <a href="<?php echo base_url().'admin/files'?>">
-            <i class="fa fa-download"></i> <span>PPDB</span>
+            <i class="fa fa-download"></i> <span>Download</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
@@ -128,7 +135,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Siswa</a></li>
-            
+            <li><a href="#"><i class="fa fa-star-o"></i> Prestasi Siswa</a></li>
 
           </ul>
         </li>
@@ -142,7 +149,14 @@
           </a>
         </li>
 
-        
+        <li class="active">
+          <a href="<?php echo base_url().'admin/komentar'?>">
+            <i class="fa fa-comments"></i> <span>Komentar</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green"><?php echo $jum_comment;?></small>
+            </span>
+          </a>
+        </li>
 
          <li>
           <a href="<?php echo base_url().'administrator/logout'?>">
@@ -164,12 +178,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Penerimaan Peserta Didik Baru
+        Komentar
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">PPDB</li>
+        <li class="active">Komentar</li>
       </ol>
     </section>
 
@@ -180,47 +194,39 @@
           <div class="box">
 
           <div class="box">
-            <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add File</a>
-            </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-striped" style="font-size:12px;">
                 <thead>
                 <tr>
-					          <th style="width:70px;">#</th>
-                    <th>File</th>
-                    <th>Tanggal Post</th>
-                    <th>Oleh</th>
-                    <th>Download</th>
+                    <th>Nama</th>
+                    <th>Komentar</th>
+                    <th>Tanggapan Untuk</th>
+                    <th>Dikirimkan Pada</th>
                     <th style="text-align:right;">Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
 				<?php
-					$no=0;
-  					foreach ($data->result_array() as $i) :
-  					   $no++;
-                       $id=$i['file_id'];
-                       $judul=$i['file_judul'];
-                       $deskripsi=$i['file_deskripsi'];
-                       $oleh=$i['file_oleh'];
-                       $tanggal=$i['tanggal'];
-                       $download=$i['file_download'];
-                       $file=$i['file_data'];
-                    ?>
+  					foreach ($data->result() as $row) :?>
                 <tr>
-                  <td><?php echo $no;?></td>
-                  <td><a href="<?php echo base_url().'admin/files/download/'.$id;?>"><?php echo $judul;?></a></td>
-                  <td><?php echo $tanggal;?></td>
-                  <td><?php echo $oleh;?></td>
-                  <td><?php echo $download;?></td>
+                  <td><?php echo $row->komentar_nama;?></td>
+                  <td><?php echo $row->komentar_isi;?></td>
+                  <td><a href="<?php echo site_url('artikel/'.$row->tulisan_slug);?>" target="_blank"><?php echo $row->tulisan_judul;?></a></td>
+                  <td><?php echo date("d M Y H:i", strtotime($row->komentar_tanggal));?></td>
                   <td style="text-align:right;">
-                        <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
-                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
+                    <?php if($row->komentar_status=='1' && $row->komentar_parent=='0'):?>
+                      <a class="btn btn-reply" href="javascript:void(0);" data-id="<?php echo $row->komentar_id;?>" data-post_id="<?php echo $row->komentar_tulisan_id;?>" title="Balas"><span class="fa fa-reply"></span></a>
+                      <a class="btn btn-hapus" href="javascript:void(0);" data-id="<?php echo $row->komentar_id;?>" title="Hapus"><span class="fa fa-trash"></span></a>
+                    <?php elseif($row->komentar_status=='1'):?>
+                      <a class="btn btn-hapus" href="javascript:void(0);" data-id="<?php echo $row->komentar_id;?>" title="Hapus"><span class="fa fa-trash"></span></a>
+                    <?php else:?>
+                      <a class="btn" href="<?php echo site_url('admin/komentar/publish/'.$row->komentar_id);?>" title="Publish"><span class="fa fa-send"></span></a>
+                      <a class="btn btn-hapus" href="javascript:void(0);" data-id="<?php echo $row->komentar_id;?>" title="Hapus"><span class="fa fa-trash"></span></a>
+                    <?php endif;?>
                   </td>
                 </tr>
-				<?php endforeach;?>
+				     <?php endforeach;?>
                 </tbody>
               </table>
             </div>
@@ -237,200 +243,11 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      
+      <b>Version</b> 1.0
     </div>
+    <strong>Copyright &copy; 2017 <a href="http://mfikri.com">M Fikri Setiadi</a>.</strong> All rights reserved.
   </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-user bg-yellow"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                <p>New phone +1(800)555-1234</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                <p>nora@example.com</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                <p>Execution time 5 seconds</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="label label-danger pull-right">70%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Update Resume
-                <span class="label label-success pull-right">95%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Laravel Integration
-                <span class="label label-warning pull-right">50%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Back End Framework
-                <span class="label label-primary pull-right">68%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Allow mail redirect
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Other sets of options are available
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Expose author name in posts
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Allow the user to show his name in blog posts
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Show me as online
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Turn off notifications
-              <input type="checkbox" class="pull-right">
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Delete chat history
-              <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-            </label>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
@@ -443,15 +260,15 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add File</h4>
+                        <h4 class="modal-title" id="myModalLabel">Add Agenda</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/files/simpan_file'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/simpan_agenda'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Judul</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Nama Agenda</label>
                                 <div class="col-sm-7">
-                                  <input type="text" name="xjudul" class="form-control" id="inputUserName" placeholder="Judul" required>
+                                  <input type="text" name="xnama_agenda" class="form-control" id="inputUserName" placeholder="Nama Agenda" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -460,17 +277,52 @@
                                   <textarea class="form-control" rows="3" name="xdeskripsi" placeholder="Deskripsi ..." required></textarea>
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Oleh</label>
+                              <label for="inputUserName" class="col-sm-4 control-label">Mulai</label>
+                              <div class="col-sm-7">
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                  </div>
+                                  <input type="text" name="xmulai" class="form-control pull-right" id="datepicker" required>
+                                </div>
+                              </div>
+                              <!-- /.input group -->
+                            </div>
+                            <!-- /.form group -->
+
+                            <!-- Date range -->
+                            <div class="form-group">
+                             <label for="inputUserName" class="col-sm-4 control-label">Selesai</label>
+                              <div class="col-sm-7">
+                                <div class="input-group date">
+                                  <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                  </div>
+                                  <input type="text" name="xselesai" class="form-control pull-right" id="datepicker2" required>
+                                </div>
+                              </div>
+                              <!-- /.input group -->
+                            </div>
+                            <!-- /.form group -->
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Tempat</label>
                                 <div class="col-sm-7">
-                                  <input type="text" name="xoleh" class="form-control" id="inputUserName" placeholder="Oleh" required>
+                                  <input type="text" name="xtempat" class="form-control" id="inputUserName" placeholder="Tempat" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">File</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Waktu</label>
                                 <div class="col-sm-7">
-                                  <input type="file" name="filefoto" required>
-                                  NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 2,7 MB.
+                                    <input type="text" name="xwaktu" class="form-control" id="inputUserName" placeholder="Contoh: 10.30-11.00 WIB" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Keterangan</label>
+                                <div class="col-sm-7">
+                                  <textarea class="form-control" name="xketerangan" rows="2" placeholder="Keterangan ..."></textarea>
                                 </div>
                             </div>
 
@@ -485,87 +337,18 @@
         </div>
 
 
-		<?php foreach ($data->result_array() as $i) :
-                $id=$i['file_id'];
-                $judul=$i['file_judul'];
-                $deskripsi=$i['file_deskripsi'];
-                $oleh=$i['file_oleh'];
-                $tanggal=$i['tanggal'];
-                $download=$i['file_download'];
-                $file=$i['file_data'];
-            ?>
-	<!--Modal Edit Pengguna-->
-        <div class="modal fade" id="ModalEdit<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+        <div class="modal fade" id="ModalHapus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit File</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Komentar</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/files/update_file'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/komentar/hapus'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-
-                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Judul</label>
-                                <div class="col-sm-7">
-                                  <input type="hidden" name="kode" value="<?php echo $id;?>">
-                                  <input type="hidden" name="file" value="<?php echo $file;?>">
-                                  <input type="text" name="xjudul" class="form-control" value="<?php echo $judul;?>" id="inputUserName" placeholder="Judul" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Deskripsi</label>
-                                <div class="col-sm-7">
-                                  <textarea class="form-control" rows="3" name="xdeskripsi" placeholder="Deskripsi ..." required><?php echo $deskripsi;?></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Oleh</label>
-                                <div class="col-sm-7">
-                                  <input type="text" name="xoleh" class="form-control" value="<?php echo $oleh;?>" id="inputUserName" placeholder="Oleh" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">File</label>
-                                <div class="col-sm-7">
-                                  <input type="file" name="filefoto">
-                                  NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 2,7 MB.
-                                </div>
-                            </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Update</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-	<?php endforeach;?>
-
-	<?php foreach ($data->result_array() as $i) :
-                $id=$i['file_id'];
-                $judul=$i['file_judul'];
-                $deskripsi=$i['file_deskripsi'];
-                $oleh=$i['file_oleh'];
-                $tanggal=$i['tanggal'];
-                $download=$i['file_download'];
-                $file=$i['file_data'];
-            ?>
-	<!--Modal Hapus Pengguna-->
-        <div class="modal fade" id="ModalHapus<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus File</h4>
-                    </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/files/hapus_file'?>" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-							             <input type="hidden" name="kode" value="<?php echo $id;?>"/>
-                           <input type="hidden" name="file" value="<?php echo $file;?>">
-                            <p>Apakah Anda yakin mau menghapus file <b><?php echo $judul;?></b> ?</p>
+							       <input type="hidden" name="kode" value=""/>
+                            <p>Apakah Anda yakin mau menghapus komentar ini?</p>
 
                     </div>
                     <div class="modal-footer">
@@ -576,10 +359,29 @@
                 </div>
             </div>
         </div>
-	<?php endforeach;?>
 
-
-
+        <!--Modal Relpy-->
+        <div class="modal fade" id="ModalReply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
+                        <h4 class="modal-title" id="myModalLabel">Reply</h4>
+                    </div>
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/komentar/reply'?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+							       <input type="hidden" name="komenid" value=""/>
+                     <input type="hidden" name="postid" value=""/>
+                        <textarea name="komentar" class="form-control" rows="8" cols="80" required></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Relpy</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 <!-- jQuery 2.2.3 -->
 <script src="<?php echo base_url().'assets/plugins/jQuery/jquery-2.2.3.min.js'?>"></script>
@@ -633,6 +435,20 @@
       showInputs: true
     });
 
+    $('#example1').on('click','.btn-reply',function(){
+      var komentar_id = $(this).data('id');
+      var post_id = $(this).data('post_id');
+      $('#ModalReply').modal('show');
+      $('[name="komenid"]').val(komentar_id);
+      $('[name="postid"]').val(post_id);
+    });
+
+    $('#example1').on('click','.btn-hapus',function(){
+      var komentar_id = $(this).data('id');
+      $('#ModalHapus').modal('show');
+      $('[name="kode"]').val(komentar_id);
+    });
+
   });
 </script>
 <?php if($this->session->flashdata('msg')=='error'):?>
@@ -648,23 +464,11 @@
                 });
         </script>
 
-    <?php elseif($this->session->flashdata('msg')=='success'):?>
-        <script type="text/javascript">
-                $.toast({
-                    heading: 'Success',
-                    text: "File Berhasil disimpan ke database.",
-                    showHideTransition: 'slide',
-                    icon: 'success',
-                    hideAfter: false,
-                    position: 'bottom-right',
-                    bgColor: '#7EC857'
-                });
-        </script>
     <?php elseif($this->session->flashdata('msg')=='info'):?>
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "File berhasil di update",
+                    text: "Komentar berhasil di Balas",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -672,11 +476,23 @@
                     bgColor: '#00C9E6'
                 });
         </script>
+      <?php elseif($this->session->flashdata('msg')=='success'):?>
+          <script type="text/javascript">
+                  $.toast({
+                      heading: 'Success',
+                      text: "Komentar Berhasil Publish.",
+                      showHideTransition: 'slide',
+                      icon: 'success',
+                      hideAfter: false,
+                      position: 'bottom-right',
+                      bgColor: '#7EC857'
+                  });
+          </script>
     <?php elseif($this->session->flashdata('msg')=='success-hapus'):?>
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "File Berhasil dihapus.",
+                    text: "Komentar Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,

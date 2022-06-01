@@ -93,7 +93,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo base_url().'admin/files'?>">
+          <a href="<?php echo base_url().'admin/ppdb'?>">
             <i class="fa fa-download"></i> <span>PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
@@ -199,7 +199,7 @@
             <!-- /.col -->
             <div class="col-md-2">
               <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-flat pull-right"><span class="fa fa-pencil"></span> Publish</button>
+                <button type="submit" class="btn btn-primary btn-flat pull-right"><span class="fa fa-pencil"></span> Kirim</button>
               <!-- /.form-group -->
             </div>
             <!-- /.col -->
