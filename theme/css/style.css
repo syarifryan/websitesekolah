@@ -2938,7 +2938,7 @@ div.panel {
   margin: 0 0 24px; }
 
 .contact-form {
-  background: #cbb58b;
+  background: #3937ab;
   position: relative;
   z-index: 2; }
   .contact-form h3 {
@@ -2956,13 +2956,13 @@ div.panel {
 .btn-submit:hover {
   border: 3px solid #fff;
   background: #fff;
-  color: #cbb58b;
+  color: #2e329e;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
 
 .contact-option {
-  border-right: 1px solid #ad9566;
+  border-right: 1px solid #2c69b9;
   padding: 45px 64px; }
   .contact-option .form-control {
     border-color: transparent; }
@@ -2983,17 +2983,17 @@ div.panel {
   padding: 0 30px 0 30px; }
 
 .contact-details p {
-  color: #fff4e0;
+  color: #6188fe;
   padding: 0 30px 0 30px; }
 
 .contact-center {
-  background: #ad9566;
+  background: #3d3bb8;
   border-radius: 50%;
   text-align: center;
   width: 44px;
   height: 44px;
   padding: 10px 0;
-  color: #fff;
+  color: rgb(255, 85, 85);
   margin: 0 auto;
   top: -17em;
   position: relative;
@@ -3009,7 +3009,7 @@ div.panel {
     border: 0;
     padding: 20px 15px; }
   .contact-option_rsp {
-    border-bottom: 1px solid #ad9566;
+    border-bottom: 1px solid #6667ad;
     padding: 5px 25px 30px; }
   .contact-center {
     display: none; } }

@@ -88,7 +88,7 @@
                               
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('download');?>">PPDB</a>
+                                  <a class="nav-link" href="<?php echo site_url('ppdb');?>">PPDB</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('galeri');?>">Gallery</a>
@@ -198,7 +198,7 @@
                           <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
                           <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                           
-                          <li><a href="<?php echo site_url('download');?>">PPDB</a></li>
+                          <li><a href="<?php echo site_url('ppdb');?>">PPDB</a></li>
                       </ul>
                   </div>
                 </div>

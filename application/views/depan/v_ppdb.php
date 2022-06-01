@@ -146,12 +146,7 @@
                                             <label for="ttl">Tempat, Tanggal Lahir</label>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                            <label for="pesan">Pesan</label>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label for="ijazah">Ijazah TK</label>
                                         <input type="file" class="form-control" name="ijazah" aria-describedby="ijazahHelp">
