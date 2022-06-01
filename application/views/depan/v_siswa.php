@@ -105,7 +105,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="mb-5">Siswa Kami</h2>
+                    <h2 class="mb-2">Siswa dan Siswi</h2>
+                    <h3 class="mb-3 text-center">SDN Kotakulon 1</h3>
                 </div>
             </div>
             <div class="row">
