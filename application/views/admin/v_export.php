@@ -18,11 +18,12 @@
 <div class="container">
 			<h2>Export</h2>
 			<h4>PPDB</h4>
-				<div class="data-tables datatable-dark">
+			<div class="data-tables datatable-dark">
 					
                 <table id="mauexport" class="table table-striped" style="font-size:13px;">
                 <thead>
                 <tr>
+                    <th>Foto</th>
           			<th>Nama Lengkap</th>
           			<th>Nama Panggilan</th>
           			<th>Alamat</th>
@@ -32,7 +33,7 @@
                     <th>KTP Orang Tua</th>
                     <th>Kartu Keluarga</th>
                     <th>Sertifikat Penghargaan</th>
-                    <th style="text-align:right;">Aksi</th>
+                    
                 </tr>
                 </thead>
                 <tbody>
@@ -53,24 +54,21 @@
 
                     ?>
                 <tr>
-                <?php if(empty($sertifikat_penghargaan)):?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
-                  <?php else:?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$photo;?>"></td>
-                  <?php endif;?>
-                  <td><?php echo $nama_lengkap;?></td>
-        				  <td><?php echo $nama_panggilan;?></td>
-                  <td><?php echo $tempat_tanggal_lahir;?></td>
-                  <td style="text-align:right;">
-                        <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
-                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
-                  </td>
+                    <?php if(empty($sertifikat_penghargaan)):?>
+                        <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
+                        <?php else:?>
+                        <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$photo;?>"></td>
+                        <?php endif;?>
+                        <td><?php echo $nama_lengkap;?></td>
+                            <td><?php echo $nama_panggilan;?></td>
+                        <td><?php echo $tempat_tanggal_lahir;?></td>
+                  
                 </tr>
-				        <?php endforeach;?>
+				<?php endforeach;?>
                 </tbody>
               </table>
 					
-				</div>
+			</div>
 </div>
 	
 <script>
