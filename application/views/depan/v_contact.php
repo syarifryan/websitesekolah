@@ -109,7 +109,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="contact-form" style="background-color: #6766ad;">
+                <div class="contact-form" style="background-color: #4685fa;">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 contact-option">
                             <div class="contact-option_rsp">
@@ -152,7 +152,7 @@
                                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                         <h6>Email</h6>
                                         <p>msyarifjanuriansyah@gmail.com
-                                            <br> sdnkotakulon1@student.polije.ac.id
+                                            <br> sdnkotakulon1@gmail.com
                                         </p>
                                     </div>
                                     <br>

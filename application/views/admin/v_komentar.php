@@ -78,14 +78,7 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="<?php echo base_url().'admin/agenda'?>">
-            <i class="fa fa-calendar"></i> <span>Agenda</span>
-            <span class="pull-right-container">
-              <small class="label pull-right"></small>
-            </span>
-          </a>
-        </li>
+        
         <li>
           <a href="<?php echo base_url().'admin/pengumuman'?>">
             <i class="fa fa-volume-up"></i> <span>Pengumuman</span>
@@ -94,14 +87,16 @@
             </span>
           </a>
         </li>
+        
         <li>
-          <a href="<?php echo base_url().'admin/files'?>">
-            <i class="fa fa-download"></i> <span>Download</span>
+          <a href="<?php echo base_url().'admin/ppdb'?>">
+            <i class="fa fa-download"></i> <span>PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
           </a>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-camera"></i>
@@ -117,34 +112,19 @@
         </li>
 
         <li>
-          <a href="<?php echo base_url().'admin/ppdb'?>">
-            <i class="fa fa-download"></i> <span>PPDB</span>
+          <a href="<?php echo base_url().'admin/guru'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
           </a>
         </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i>
-            <span>Kesiswaan</span>
+        
+        <li>          
+            <a href="<?php echo base_url().'admin/siswa'?>">
+            <i class="fa fa-users"></i> <span>Data Siswa</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Siswa</a></li>
-            <li><a href="#"><i class="fa fa-star-o"></i> Prestasi Siswa</a></li>
-
-          </ul>
-        </li>
-
-        <li>
-          <a href="<?php echo base_url().'admin/inbox'?>">
-            <i class="fa fa-envelope"></i> <span>Inbox</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green"><?php echo $jum_pesan;?></small>
+              <small class="label pull-right"></small>
             </span>
           </a>
         </li>
@@ -157,7 +137,16 @@
             </span>
           </a>
         </li>
-
+        
+        <li>
+          <a href="<?php echo base_url().'admin/inbox'?>">
+            <i class="fa fa-envelope"></i> <span>Inbox</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green"><?php echo $jum_pesan;?></small>
+            </span>
+          </a>
+        </li>
+        
          <li>
           <a href="<?php echo base_url().'administrator/logout'?>">
             <i class="fa fa-sign-out"></i> <span>Sign Out</span>
@@ -243,9 +232,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0
-    </div>
-    <strong>Copyright &copy; 2017 <a href="http://mfikri.com">M Fikri Setiadi</a>.</strong> All rights reserved.
+    
   </footer>
 
   <!-- Add the sidebar's background. This div must be placed
@@ -254,43 +241,6 @@
 </div>
 <!-- ./wrapper -->
 
-<!--Modal Add Pengguna-->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add Agenda</h4>
-                    </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/simpan_agenda'?>" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Nama Agenda</label>
-                                <div class="col-sm-7">
-                                  <input type="text" name="xnama_agenda" class="form-control" id="inputUserName" placeholder="Nama Agenda" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Deskripsi</label>
-                                <div class="col-sm-7">
-                                  <textarea class="form-control" rows="3" name="xdeskripsi" placeholder="Deskripsi ..." required></textarea>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                              <label for="inputUserName" class="col-sm-4 control-label">Mulai</label>
-                              <div class="col-sm-7">
-                                <div class="input-group date">
-                                  <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
-                                  </div>
-                                  <input type="text" name="xmulai" class="form-control pull-right" id="datepicker" required>
-                                </div>
-                              </div>
-                              <!-- /.input group -->
-                            </div>
-                            <!-- /.form group -->
 
                             <!-- Date range -->
                             <div class="form-group">
