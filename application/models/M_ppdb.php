@@ -7,11 +7,11 @@ class M_ppdb extends CI_Model{
 	}
 
 	function simpan_ppdb($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga,$sertifikat_penghargaan){
-		$hsl=$this->db->query("INSERT INTO tbl_ppdb (nama_lengkap,nama_panggilan,alamat,tempat_tanggal_lahir,ijazah_tk,akta_kelahiran,kartu_keluarga,sertifikat_penghargaan) VALUES ('$nama_lengkap','$nama_panggilan','$alamat','$tempat_tanggal_lahir','$ijazah_tk','$akta_kelahiran','$ktp_orang_tua','$kartu_keluarga','$sertifikat_penghargaan')");
+		$hsl=$this->db->query("INSERT INTO tbl_ppdb (nama_lengkap,nama_panggilan,alamat,tempat_tanggal_lahir,ijazah_tk,akta_kelahiran,ktp_orang_tua,kartu_keluarga,sertifikat_penghargaan) VALUES ('$nama_lengkap','$nama_panggilan','$alamat','$tempat_tanggal_lahir','$ijazah_tk','$akta_kelahiran','$ktp_orang_tua','$kartu_keluarga','$sertifikat_penghargaan')");
 		return $hsl;
 	}
-	function simpan_guru_tanpa_img($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga){
-		$hsl=$this->db->query("INSERT INTO tbl_ppdb (nama_lengkap,nama_panggilan,alamat,tempat_tanggal_lahir,ijazah_tk,akta_kelahiran,ktp_orang_tua,kartu_keluarga) VALUES ($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga)");
+	function simpan_guru_tanpa_img($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir){
+		$hsl=$this->db->query("INSERT INTO tbl_ppdb (nama_lengkap,nama_panggilan,alamat,tempat_tanggal_lahir) VALUES ($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir)");
 		return $hsl;
 	}
 

@@ -223,14 +223,35 @@
 
                     ?>
                 <tr>
+                  <td><?php echo $nama_lengkap;?></td>
+        				  <td><?php echo $nama_panggilan;?></td>
+                  <td><?php echo $alamat;?></td>
+                  <td><?php echo $tempat_tanggal_lahir;?></td>
+                  <?php if(empty($ijazah_tk)):?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
+                  <?php else:?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ijazah_tk;?>"></td>
+                  <?php endif;?>
+                  <?php if(empty($akta_kelahiran)):?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
+                  <?php else:?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ijazah_tk;?>"></td>
+                  <?php endif;?>
+                  <?php if(empty($ktp_orang_tua)):?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
+                  <?php else:?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ijazah_tk;?>"></td>
+                  <?php endif;?>
+                  <?php if(empty($kartu_keluarga)):?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
+                  <?php else:?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ijazah_tk;?>"></td>
+                  <?php endif;?>
                   <?php if(empty($sertifikat_penghargaan)):?>
                   <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
                   <?php else:?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$photo;?>"></td>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ijazah_tk;?>"></td>
                   <?php endif;?>
-                  <td><?php echo $nama_lengkap;?></td>
-        				  <td><?php echo $nama_panggilan;?></td>
-                  <td><?php echo $tempat_tanggal_lahir;?></td>
                   <td style="text-align:right;">
                         <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
                         <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
@@ -465,7 +486,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Add PPDB</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/guru/simpan_ppdb'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/ppdb/simpan_ppdb'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 
                                     <div class="form-group">
@@ -498,35 +519,35 @@
                                    <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Ijazah TK</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto_ijazah_tk"/>
+                                            <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Akta Kelahiran</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto_akta_kelahiran"/>
+                                            <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Ktp Orang Tua</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto_ktp_orang_tua"/>
+                                            <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Kartu Keluarga</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto_kartu_keluarga"/>
+                                            <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Sertifikat Penghargaan (Jika Ada)</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto_sertifikat_penghargaan"/>
+                                            <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
 
@@ -620,28 +641,28 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Ijazah TK</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto_ijazah_tk"/>
+                                            <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Akta Kelahiran</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto_akta_kelahiran"/>
+                                            <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Ktp Orang Tua</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto_ktp_orang_tua"/>
+                                            <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Kartu Keluarga</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto_kartu_keluarga"/>
+                                            <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
 

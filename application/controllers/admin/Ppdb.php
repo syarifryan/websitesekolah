@@ -34,21 +34,21 @@ class Ppdb extends CI_Controller{
 							$gbr5 = $this->upload->data();
 	                        //Compress Image
 	                        $config['image_library']='gd2';
-	                        $config['source_image']='./assets/images/ppdb/'.$gbr['file_name_1'];
-							$config['source_image']='./assets/images/ppdb/'.$gbr2['file_name_2'];
-							$config['source_image']='./assets/images/ppdb/'.$gbr3['file_name_3'];
-							$config['source_image']='./assets/images/ppdb/'.$gbr4['file_name_4'];
-							$config['source_image']='./assets/images/ppdb/'.$gbr5['file_name_5'];
+	                        $config['source_image']='./assets/images/ppdb/'.$gbr['file_name'];
+							$config['source_image']='./assets/images/ppdb/'.$gbr2['file_name'];
+							$config['source_image']='./assets/images/ppdb/'.$gbr3['file_name'];
+							$config['source_image']='./assets/images/ppdb/'.$gbr4['file_name'];
+							$config['source_image']='./assets/images/ppdb/'.$gbr5['file_name'];
 	                        $config['create_thumb']= FALSE;
 	                        $config['maintain_ratio']= FALSE;
 	                        $config['quality']= '60%';
 	                        $config['width']= 300;
 	                        $config['height']= 300;
-	                        $config['new_image']= './assets/images/ppdb/'.$gbr['file_name_1'];
-							$config['new_image']= './assets/images/ppdb/'.$gbr2['file_name_2'];
-							$config['new_image']= './assets/images/ppdb/'.$gbr3['file_name_3'];
-							$config['new_image']= './assets/images/ppdb/'.$gbr4['file_name_4'];
-							$config['new_image']= './assets/images/ppdb/'.$gbr5['file_name_5'];
+	                        $config['new_image']= './assets/images/ppdb/'.$gbr['file_name'];
+							$config['new_image']= './assets/images/ppdb/'.$gbr2['file_name'];
+							$config['new_image']= './assets/images/ppdb/'.$gbr3['file_name'];
+							$config['new_image']= './assets/images/ppdb/'.$gbr4['file_name'];
+							$config['new_image']= './assets/images/ppdb/'.$gbr5['file_name'];
 	
 	                        $this->load->library('image_lib', $config);
 	                        $this->image_lib->resize();
@@ -63,7 +63,7 @@ class Ppdb extends CI_Controller{
 							$alamat=strip_tags($this->input->post('xalamat'));
 							$tempat_tanggal_lahir=strip_tags($this->input->post('xtempat_tanggal_lahir'));
 
-							$this->m_ppdb->simpan_guru($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga,$sertifikat_penghargaan);
+							$this->m_ppdb->simpan_ppdb($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga,$sertifikat_penghargaan);
 							echo $this->session->set_flashdata('msg','success');
 							redirect('admin/ppdb');
 					}else{
@@ -72,16 +72,12 @@ class Ppdb extends CI_Controller{
 	                }
 	                 
 	            }else{
-					$ijazah_tk=$gbr['file_name'];
-					$akta_kelahiran=$gbr2['file_name'];
-					$ktp_orang_tua=$gbr3['file_name'];
-					$kartu_keluarga=$gbr4['file_name'];
 	            	$nama_lengkap=strip_tags($this->input->post('xnama_lengkap'));
 					$nama_panggilan=strip_tags($this->input->post('xnama_panggilan'));
 					$alamat=strip_tags($this->input->post('xalamat'));
 					$tempat_tanggal_lahir=strip_tags($this->input->post('xtempat_tanggal_lahir'));
 
-					$this->m_ppdb->simpan_guru_tanpa_img($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga);
+					$this->m_ppdb->simpan_guru_tanpa_img($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir);
 					echo $this->session->set_flashdata('msg','success');
 					redirect('admin/ppdb');
 				}
