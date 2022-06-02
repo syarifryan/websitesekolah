@@ -86,7 +86,7 @@
         </li>
         <li class="active">
           <a href="<?php echo base_url().'admin/ppdb'?>">
-            <i class="fa fa-graduation-cap"></i> <span>Data PPDB</span>
+            <i class="fa fa-download"></i> <span>Data PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>

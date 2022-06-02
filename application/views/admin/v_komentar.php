@@ -117,8 +117,8 @@
         </li>
 
         <li>
-          <a href="<?php echo base_url().'admin/guru'?>">
-            <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
+          <a href="<?php echo base_url().'admin/ppdb'?>">
+            <i class="fa fa-download"></i> <span>PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
