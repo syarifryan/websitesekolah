@@ -152,7 +152,7 @@
                                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                         <h6>Email</h6>
                                         <p>msyarifjanuriansyah@gmail.com
-                                            <br> E41192426@student.polije.ac.id
+                                            <br> sdnkotakulon1@student.polije.ac.id
                                         </p>
                                     </div>
                                     <br>
