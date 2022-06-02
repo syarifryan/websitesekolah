@@ -108,7 +108,7 @@
 
         <li class="active">
           <a href="<?php echo base_url().'admin/guru'?>">
-            <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
+            <i class="fa fa-graduation-cap"></i> <span>Data PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
@@ -169,18 +169,89 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Penerimaan Peserta Didik Baru
+        Data PPDB
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">PPDB</li>
+        <li class="active">Guru</li>
       </ol>
     </section>
 
-    
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
 
+          <div class="box">
+            <div class="box-header">
+              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add PPDB</a>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-striped" style="font-size:13px;">
+                <thead>
+                <tr>
+          					<th>Nama Lengkap</th>
+          					<th>Nama Panggilan</th>
+          					<th>Alamat</th>
+          					<th>Tempat, Tanggal Lahir</th>
+          					<th>Ijazah TK</th>
+                    <th>Akta Kelahiran</th>
+                    <th>KTP Orang Tua</th>
+                    <th>Kartu Keluarga</th>
+                    <th>Sertifikat Penghargaan</th>
+                    <th style="text-align:right;">Aksi</th>
+                </tr>
+                </thead>
+                <tbody>
+          				<?php
+          					$no=0;
+          					foreach ($data->result_array() as $i) :
+          					   $no++;
+          					   $id=$i['ppdb_id'];
+          					   $nama_lengkap=$i['nama_lengkap'];
+          					   $nama_panggilan=$i['nama_panggilan'];
+          					   $alamat=$i['alamat'];
+          					   $tempat_tanggal_lahir=$i['tempat_tanggal_lahir'];
+          					   $ijazah_tk=$i['ijazah_tk'];
+                       $akta_kelahiran=$i['akta_kelahiran'];
+                       $ktp_orang_tua=$i['ktp_orang_tua'];
+                       $kartu_keluarga=$i['kartu_keluarga'];
+                       $sertifikat_penghargaan=$i['sertifikat_penghargaan'];
+
+                    ?>
+                <tr>
+                  <?php if(empty($sertifikat_penghargaan)):?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
+                  <?php else:?>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$photo;?>"></td>
+                  <?php endif;?>
+                  <td><?php echo $nama_lengkap;?></td>
+        				  <td><?php echo $nama_panggilan;?></td>
+                  <td><?php echo $tempat_tanggal_lahir;?></td>
+                  <td style="text-align:right;">
+                        <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
+                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
+                  </td>
+                </tr>
+				<?php endforeach;?>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
     <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+ 
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -392,64 +463,70 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add Guru</h4>
+                        <h4 class="modal-title" id="myModalLabel">Add PPDB</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/guru/simpan_guru'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/guru/simpan_ppdb'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">NIP</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Lengkap</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnip" class="form-control" id="inputUserName" placeholder="NIP" required>
+                                            <input type="text" name="xnama_lengkap" class="form-control" id="inputUserName" placeholder="Nama Lengkap" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Nama</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Panggilan</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Nama" required>
+                                            <input type="text" name="xnama_panggilan" class="form-control" id="inputUserName" placeholder="Nama Panggilan" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Alamat</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="xalamat" class="form-control" id="inputUserName" placeholder="Alamat" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Jenis Kelamin</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Tempat, Tanggal Lahir</label>
                                         <div class="col-sm-7">
-                                           <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
-                                                <label for="inlineRadio1"> Laki-Laki </label>
-                                            </div>
-                                            <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
-                                                <label for="inlineRadio2"> Perempuan </label>
-                                            </div>
+                                            <input type="text" name="xtempat_tanggal_lahir" class="form-control" id="inputUserName" placeholder="Tempat, Tanggal Lahir" required>
+                                        </div>
+                                    </div>
+
+                                   <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Ijazah TK</label>
+                                        <div class="col-sm-7">
+                                            <input type="file" name="filefoto_ijazah_tk"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Tempat Lahir</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Akta Kelahiran</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xtmp_lahir" class="form-control" id="inputUserName" placeholder="Tempat Lahir" required>
+                                            <input type="file" name="filefoto_akta_kelahiran"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Tanggal Lahir</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Ktp Orang Tua</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xtgl_lahir" class="form-control" id="inputUserName" placeholder="Contoh: 25 September 1993" required>
+                                            <input type="file" name="filefoto_ktp_orang_tua"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Mata Pelajaran</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Kartu Keluarga</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xmapel" class="form-control" id="inputUserName" placeholder="Contoh: PPKN, Matematika" required>
+                                            <input type="file" name="filefoto_kartu_keluarga"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Sertifikat Penghargaan (Jika Ada)</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto"/>
+                                            <input type="file" name="filefoto_sertifikat_penghargaan"/>
                                         </div>
                                     </div>
 
@@ -541,16 +618,37 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Mata Pelajaran</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Ijazah TK</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xmapel" value="<?php echo $mapel;?>" class="form-control" id="inputUserName" placeholder="Contoh: PPKN, Matematika" required>
+                                            <input type="file" name="filefoto_ijazah_tk"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Akta Kelahiran</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto"/>
+                                            <input type="file" name="filefoto_akta_kelahiran"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Ktp Orang Tua</label>
+                                        <div class="col-sm-7">
+                                            <input type="file" name="filefoto_ktp_orang_tua"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Kartu Keluarga</label>
+                                        <div class="col-sm-7">
+                                            <input type="file" name="filefoto_kartu_keluarga"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Sertifikat Penghargaan (Jika Ada)</label>
+                                        <div class="col-sm-7">
+                                            <input type="file" name="filefoto_sertifikat_penghargaan"/>
                                         </div>
                                     </div>
 
