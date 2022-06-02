@@ -6,14 +6,14 @@ class Ppdb extends CI_Controller{
             $url=base_url('administrator');
             redirect($url);
         };
-		$this->load->model('m_guru');
+		$this->load->model('m_ppdb');
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
 	}
 
 
 	function index(){
-		$x['data']=$this->m_guru->get_all_guru();
+		$x['data']=$this->m_ppdb->get_all_guru();
 		$this->load->view('admin/v_ppdb',$x);
 	}
 	
@@ -48,7 +48,7 @@ class Ppdb extends CI_Controller{
 							$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 							$mapel=strip_tags($this->input->post('xmapel'));
 
-							$this->m_guru->simpan_guru($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel,$photo);
+							$this->m_ppdb->simpan_guru($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel,$photo);
 							echo $this->session->set_flashdata('msg','success');
 							redirect('admin/guru');
 					}else{
@@ -64,7 +64,7 @@ class Ppdb extends CI_Controller{
 					$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 					$mapel=strip_tags($this->input->post('xmapel'));
 
-					$this->m_guru->simpan_guru_tanpa_img($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel);
+					$this->m_ppdb->simpan_guru_tanpa_img($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel);
 					echo $this->session->set_flashdata('msg','success');
 					redirect('admin/guru');
 				}
@@ -107,7 +107,7 @@ class Ppdb extends CI_Controller{
 							$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 							$mapel=strip_tags($this->input->post('xmapel'));
 
-							$this->m_guru->update_guru($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel,$photo);
+							$this->m_ppdb->update_guru($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel,$photo);
 							echo $this->session->set_flashdata('msg','info');
 							redirect('admin/guru');
 	                    
@@ -124,7 +124,7 @@ class Ppdb extends CI_Controller{
 							$tmp_lahir=strip_tags($this->input->post('xtmp_lahir'));
 							$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 							$mapel=strip_tags($this->input->post('xmapel'));
-							$this->m_guru->update_guru_tanpa_img($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel);
+							$this->m_ppdb->update_guru_tanpa_img($kode,$nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel);
 							echo $this->session->set_flashdata('msg','info');
 							redirect('admin/guru');
 	            } 
@@ -136,7 +136,7 @@ class Ppdb extends CI_Controller{
 		$gambar=$this->input->post('gambar');
 		$path='./assets/images/'.$gambar;
 		unlink($path);
-		$this->m_guru->hapus_guru($kode);
+		$this->m_ppdb->hapus_guru($kode);
 		echo $this->session->set_flashdata('msg','success-hapus');
 		redirect('admin/guru');
 	}
