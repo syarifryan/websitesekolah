@@ -183,11 +183,9 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-
-          <div class="box">
-            <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add PPDB</a>
-            </div>
+          <div class="box-header">
+            <a class="btn btn-success btn-flat" href="export">Export Data</a>
+          </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-striped" style="font-size:13px;">
@@ -206,7 +204,7 @@
                 </tr>
                 </thead>
                 <tbody>
-          				<?php
+          			<?php
           					$no=0;
           					foreach ($data->result_array() as $i) :
           					   $no++;
@@ -257,7 +255,7 @@
                         <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
                   </td>
                 </tr>
-				<?php endforeach;?>
+				        <?php endforeach;?>
                 </tbody>
               </table>
             </div>
