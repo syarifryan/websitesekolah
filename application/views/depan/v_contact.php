@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Contact</title>
-    <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon.png'?>">
+    <link rel="shorcut icon" href="<?php echo base_url().'theme/images/logo.png'?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
     <!-- Google Fonts -->
@@ -152,7 +152,7 @@
                                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                         <h6>Email</h6>
                                         <p>msyarifjanuriansyah@gmail.com
-                                            <br> E41192426@student.polije.ac.id
+                                            <br> sdnkotakulon1@student.polije.ac.id
                                         </p>
                                     </div>
                                     <br>
