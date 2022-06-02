@@ -206,7 +206,7 @@
                 </tr>
                 </thead>
                 <tbody>
-          				<?php
+          			<?php
           					$no=0;
           					foreach ($data->result_array() as $i) :
           					   $no++;
@@ -223,7 +223,7 @@
 
                     ?>
                 <tr>
-                  <?php if(empty($sertifikat_penghargaan)):?>
+                <?php if(empty($sertifikat_penghargaan)):?>
                   <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
                   <?php else:?>
                   <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$photo;?>"></td>
@@ -236,7 +236,7 @@
                         <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
                   </td>
                 </tr>
-				<?php endforeach;?>
+				        <?php endforeach;?>
                 </tbody>
               </table>
             </div>
