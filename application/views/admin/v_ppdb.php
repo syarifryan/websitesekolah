@@ -84,9 +84,9 @@
             </span>
           </a>
         </li>
-        <li>
+        <li class="active">
           <a href="<?php echo base_url().'admin/ppdb'?>">
-            <i class="fa fa-download"></i> <span>PPDB</span>
+            <i class="fa fa-graduation-cap"></i> <span>Data PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
@@ -106,14 +106,7 @@
           </ul>
         </li>
 
-        <li class="active">
-          <a href="<?php echo base_url().'admin/guru'?>">
-            <i class="fa fa-graduation-cap"></i> <span>Data PPDB</span>
-            <span class="pull-right-container">
-              <small class="label pull-right"></small>
-            </span>
-          </a>
-        </li>
+        
 
         <li class="treeview">
           <a href="#">
@@ -129,6 +122,16 @@
 
           </ul>
         </li>
+
+        <li>
+          <a href="<?php echo base_url().'admin/guru'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
         <li>
           <a href="<?php echo base_url().'admin/komentar'?>">
             <i class="fa fa-envelope"></i> <span>Komentar</span>
