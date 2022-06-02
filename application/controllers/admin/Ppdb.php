@@ -13,12 +13,12 @@ class Ppdb extends CI_Controller{
 
 
 	function index(){
-		$x['data']=$this->m_ppdb->get_all_guru();
+		$x['data']=$this->m_ppdb->get_all_ppdb();
 		$this->load->view('admin/v_ppdb',$x);
 	}
 	
-	function simpan_guru(){
-				$config['upload_path'] = './assets/images/'; //path folder
+	function simpan_ppdb(){
+				$config['upload_path'] = './assets/images/ppdb/'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -28,52 +28,69 @@ class Ppdb extends CI_Controller{
 	                if ($this->upload->do_upload('filefoto'))
 	                {
 	                        $gbr = $this->upload->data();
+							$gbr2 = $this->upload->data();
+							$gbr3 = $this->upload->data();
+							$gbr4 = $this->upload->data();
+							$gbr5 = $this->upload->data();
 	                        //Compress Image
 	                        $config['image_library']='gd2';
-	                        $config['source_image']='./assets/images/'.$gbr['file_name'];
+	                        $config['source_image']='./assets/images/ppdb/'.$gbr['file_name_1'];
+							$config['source_image']='./assets/images/ppdb/'.$gbr2['file_name_2'];
+							$config['source_image']='./assets/images/ppdb/'.$gbr3['file_name_3'];
+							$config['source_image']='./assets/images/ppdb/'.$gbr4['file_name_4'];
+							$config['source_image']='./assets/images/ppdb/'.$gbr5['file_name_5'];
 	                        $config['create_thumb']= FALSE;
 	                        $config['maintain_ratio']= FALSE;
 	                        $config['quality']= '60%';
 	                        $config['width']= 300;
 	                        $config['height']= 300;
-	                        $config['new_image']= './assets/images/'.$gbr['file_name'];
+	                        $config['new_image']= './assets/images/ppdb/'.$gbr['file_name_1'];
+							$config['new_image']= './assets/images/ppdb/'.$gbr2['file_name_2'];
+							$config['new_image']= './assets/images/ppdb/'.$gbr3['file_name_3'];
+							$config['new_image']= './assets/images/ppdb/'.$gbr4['file_name_4'];
+							$config['new_image']= './assets/images/ppdb/'.$gbr5['file_name_5'];
+	
 	                        $this->load->library('image_lib', $config);
 	                        $this->image_lib->resize();
 
-	                        $photo=$gbr['file_name'];
-							$nip=strip_tags($this->input->post('xnip'));
-							$nama=strip_tags($this->input->post('xnama'));
-							$jenkel=strip_tags($this->input->post('xjenkel'));
-							$tmp_lahir=strip_tags($this->input->post('xtmp_lahir'));
-							$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
-							$mapel=strip_tags($this->input->post('xmapel'));
+	                        $ijazah_tk=$gbr['file_name'];
+							$akta_kelahiran=$gbr2['file_name'];
+							$ktp_orang_tua=$gbr3['file_name'];
+							$kartu_keluarga=$gbr4['file_name'];
+							$sertifikat_penghargaan=$gbr5['file_name'];
+							$nama_lengkap=strip_tags($this->input->post('xnama_lengkap'));
+							$nama_panggilan=strip_tags($this->input->post('xnama_panggilan'));
+							$alamat=strip_tags($this->input->post('xalamat'));
+							$tempat_tanggal_lahir=strip_tags($this->input->post('xtempat_tanggal_lahir'));
 
-							$this->m_ppdb->simpan_guru($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel,$photo);
+							$this->m_ppdb->simpan_guru($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga,$sertifikat_penghargaan);
 							echo $this->session->set_flashdata('msg','success');
-							redirect('admin/guru');
+							redirect('admin/ppdb');
 					}else{
 	                    echo $this->session->set_flashdata('msg','warning');
-	                    redirect('admin/guru');
+	                    redirect('admin/ppdb');
 	                }
 	                 
 	            }else{
-	            	$nip=strip_tags($this->input->post('xnip'));
-					$nama=strip_tags($this->input->post('xnama'));
-					$jenkel=strip_tags($this->input->post('xjenkel'));
-					$tmp_lahir=strip_tags($this->input->post('xtmp_lahir'));
-					$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
-					$mapel=strip_tags($this->input->post('xmapel'));
+					$ijazah_tk=$gbr['file_name'];
+					$akta_kelahiran=$gbr2['file_name'];
+					$ktp_orang_tua=$gbr3['file_name'];
+					$kartu_keluarga=$gbr4['file_name'];
+	            	$nama_lengkap=strip_tags($this->input->post('xnama_lengkap'));
+					$nama_panggilan=strip_tags($this->input->post('xnama_panggilan'));
+					$alamat=strip_tags($this->input->post('xalamat'));
+					$tempat_tanggal_lahir=strip_tags($this->input->post('xtempat_tanggal_lahir'));
 
-					$this->m_ppdb->simpan_guru_tanpa_img($nip,$nama,$jenkel,$tmp_lahir,$tgl_lahir,$mapel);
+					$this->m_ppdb->simpan_guru_tanpa_img($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga);
 					echo $this->session->set_flashdata('msg','success');
-					redirect('admin/guru');
+					redirect('admin/ppdb');
 				}
 				
 	}
 	
 	function update_guru(){
 				
-	            $config['upload_path'] = './assets/images/'; //path folder
+	            $config['upload_path'] = './assets/images/ppdb'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 

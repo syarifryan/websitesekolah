@@ -1,12 +1,12 @@
 <?php 
 class M_ppdb extends CI_Model{
 
-	function get_all_guru(){
+	function get_all_ppdb(){
 		$hsl=$this->db->query("SELECT * FROM tbl_ppdb");
 		return $hsl;
 	}
 
-	function simpan_guru($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga,$sertifikat_penghargaan){
+	function simpan_ppdb($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga,$sertifikat_penghargaan){
 		$hsl=$this->db->query("INSERT INTO tbl_ppdb (nama_lengkap,nama_panggilan,alamat,tempat_tanggal_lahir,ijazah_tk,akta_kelahiran,kartu_keluarga,sertifikat_penghargaan) VALUES ('$nama_lengkap','$nama_panggilan','$alamat','$tempat_tanggal_lahir','$ijazah_tk','$akta_kelahiran','$ktp_orang_tua','$kartu_keluarga','$sertifikat_penghargaan')");
 		return $hsl;
 	}
