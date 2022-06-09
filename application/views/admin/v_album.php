@@ -134,7 +134,7 @@
           <a href="<?php echo base_url().'admin/komentar'?>">
             <i class="fa fa-envelope"></i> <span>Komentar</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green"><?php echo $jum_pesan;?></small>
+              <small class="label pull-right bg-green"><?php echo $jum_comment;?></small>
             </span>
           </a>
         </li>

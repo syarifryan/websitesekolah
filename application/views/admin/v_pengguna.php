@@ -83,7 +83,7 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo base_url().'admin/files'?>">
+          <a href="<?php echo base_url().'admin/ppdb'?>">
             <i class="fa fa-download"></i> <span>PPDB</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
@@ -113,25 +113,20 @@
           </a>
         </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-user"></i>
-            <span>Kesiswaan</span>
+        <li>          
+            <a href="<?php echo base_url().'admin/siswa'?>">
+            <i class="fa fa-users"></i> <span>Data Siswa</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+              <small class="label pull-right"></small>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url().'admin/siswa'?>"><i class="fa fa-users"></i> Data Siswa</a></li>
-            
-
-          </ul>
         </li>
+        
         <li>
           <a href="<?php echo base_url().'admin/komentar'?>">
             <i class="fa fa-envelope"></i> <span>Komentar</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green"><?php echo $jum_pesan;?></small>
+              <small class="label pull-right bg-green"><?php echo $jum_comment;?></small>
             </span>
           </a>
         </li>
