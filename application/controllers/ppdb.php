@@ -20,11 +20,11 @@ class ppdb extends CI_Controller {
         $config3['upload_path'] = './assets/images/ppdb/'; //path folder
         $config4['upload_path'] = './assets/images/ppdb/'; //path folder
         $config5['upload_path'] = './assets/images/ppdb/'; //path folder
-	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-        $config2['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-        $config3['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-        $config4['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-        $config5['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp|pdf'; //type yang dapat diakses bisa anda sesuaikan
+        $config2['allowed_types'] = 'gif|jpg|png|jpeg|bmp|pdf'; //type yang dapat diakses bisa anda sesuaikan
+        $config3['allowed_types'] = 'gif|jpg|png|jpeg|bmp|pdf'; //type yang dapat diakses bisa anda sesuaikan
+        $config4['allowed_types'] = 'gif|jpg|png|jpeg|bmp|pdf'; //type yang dapat diakses bisa anda sesuaikan
+        $config5['allowed_types'] = 'gif|jpg|png|jpeg|bmp|pdf'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
         $config2['encrypt_name'] = TRUE; //nama yang terupload nantinya
         $config3['encrypt_name'] = TRUE; //nama yang terupload nantinya
@@ -114,7 +114,7 @@ class ppdb extends CI_Controller {
 			$tempat_tanggal_lahir=strip_tags($this->input->post('xtempat_tanggal_lahir'));
 
 			$this->m_ppdb->simpan_ppdb($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir,$ijazah_tk,$akta_kelahiran,$ktp_orang_tua,$kartu_keluarga,$sertifikat_penghargaan);
-			echo $this->session->set_flashdata('msg','success');
+			echo $this->session->set_flashdata('msg','<p><strong> NB: </strong> Berkas Pendaftaran Sudah Dikirim.</p>');
 			redirect('');
 			}else{
 	        echo $this->session->set_flashdata('msg','warning');
@@ -128,7 +128,7 @@ class ppdb extends CI_Controller {
 			$tempat_tanggal_lahir=strip_tags($this->input->post('xtempat_tanggal_lahir'));
 
 			$this->m_ppdb->simpan_guru_tanpa_img($nama_lengkap,$nama_panggilan,$alamat,$tempat_tanggal_lahir);
-			echo $this->session->set_flashdata('msg','success');
+			echo $this->session->set_flashdata('msg','<p><strong> NB: </strong> Berkas Pendaftaran Sudah Dikirim.</p>');
 			redirect('');
 	    }
 				

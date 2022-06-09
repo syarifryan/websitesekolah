@@ -87,7 +87,7 @@ class Ppdb extends CI_Controller{
 	function update_guru(){
 				
 	            $config['upload_path'] = './assets/images/ppdb'; //path folder
-	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp|pdf'; //type yang dapat diakses bisa anda sesuaikan
 	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
 	            $this->upload->initialize($config);
