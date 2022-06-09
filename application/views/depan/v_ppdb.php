@@ -120,52 +120,52 @@
             <div class="container">
                 <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">PENERIMAAN PESERTA DIDIK BARU</h1>
                 <h2 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">SDN KOTAKULON 1</h2>
-                 <form method="POST" action="#!">
+                 <form method="POST" action="<?php echo base_url().'ppdb/simpan_ppdb'?>" enctype="multipart/form-data">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="namalengkap" placeholder="Your Email">
-                                            <label for="namalengkap">Nama Lengkap</label>
+                                            <input type="text" name="xnama_lengkap" class="form-control" id="namalengkap" placeholder="Masukkan Nama Lengkap">
+                                            <label for="xnama_lengkap">Nama Lengkap</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="namapanggilan" placeholder="Your Email">
-                                            <label for="namapanggilan">Nama Panggilan</label>
+                                            <input type="text" name="xnama_panggilan" class="form-control" id="namapanggilan" placeholder="Your Email">
+                                            <label for="xnama_panggilan">Nama Panggilan</label>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="alamat" placeholder="Alamat">
-                                            <label for="alamat">Alamat</label>
+                                            <input type="text" name="xalamat" class="form-control" id="alamat" placeholder="Alamat">
+                                            <label for="xalamat">Alamat</label>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="ttl" placeholder="TTL">
-                                            <label for="ttl">Tempat, Tanggal Lahir</label>
+                                            <input type="text" name="xtempat_tanggal_lahir" class="form-control" id="ttl" placeholder="TTL">
+                                            <label for="xtempat_tanggal_lahir">Tempat, Tanggal Lahir</label>
                                         </div>
                                     </div>
                                     <h4>Upload Berkas</h4>
                                     <div class="form-group">
                                         <label for="ijazah">Scan Ijazah TK</label>
-                                        <input type="file" class="form-control" name="ijazah" aria-describedby="ijazahHelp">
+                                        <input type="file" class="form-control" name="filefoto" aria-describedby="ijazahHelp">
                                     </div>
                                     <div class="form-group">
                                         <label for="akta">Scan Akta Kelahiran</label>
-                                        <input type="file" class="form-control" name="akta" aria-describedby="aktaHelp">
+                                        <input type="file" class="form-control" name="filefoto2" aria-describedby="aktaHelp">
                                     </div>
                                     <div class="form-group">
                                         <label for="ktp">Scan KTP Orang Tua</label>
-                                        <input type="file" class="form-control" name="ktp" aria-describedby="ktpHelp">
+                                        <input type="file" class="form-control" name="filefoto3" aria-describedby="ktpHelp">
                                     </div>
                                     <div class="form-group">
                                         <label for="kk">Scan Kartu Keluarga</label>
-                                        <input type="file" class="form-control" name="kk" aria-describedby="kkHelp">
+                                        <input type="file" class="form-control" name="filefoto4" aria-describedby="kkHelp">
                                     </div>
                                     <div class="form-group">
                                         <label for="sertifikat">Scan Sertifikat Penghargaan (jika ada)</label>
-                                        <input type="file" class="form-control" name="sertifikat" aria-describedby="sertifikatHelp">
+                                        <input type="file" class="form-control" name="filefoto5" aria-describedby="sertifikatHelp">
                                     </div>
 
                                     <div class="col-12">

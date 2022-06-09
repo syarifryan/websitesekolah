@@ -136,7 +136,7 @@
           <a href="<?php echo base_url().'admin/komentar'?>">
             <i class="fa fa-envelope"></i> <span>Komentar</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green"><?php echo $jum_pesan;?></small>
+              <small class="label pull-right bg-green"><?php echo $jum_comment;?></small>
             </span>
           </a>
         </li>
@@ -189,6 +189,11 @@
           <div class="box-header">
             <a class="btn btn-success btn-flat" href="export">Export Data</a>
           </div>
+          <div class="box">
+            <div class="box-header">
+              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add PPDB</a>
+            </div>
+
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-striped" style="font-size:13px;">
@@ -236,22 +241,22 @@
                   <?php if(empty($akta_kelahiran)):?>
                   <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
                   <?php else:?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ijazah_tk;?>"></td>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$akta_kelahiran;?>"></td>
                   <?php endif;?>
                   <?php if(empty($ktp_orang_tua)):?>
                   <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
                   <?php else:?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ijazah_tk;?>"></td>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ktp_orang_tua;?>"></td>
                   <?php endif;?>
                   <?php if(empty($kartu_keluarga)):?>
                   <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
                   <?php else:?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ijazah_tk;?>"></td>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$kartu_keluarga;?>"></td>
                   <?php endif;?>
                   <?php if(empty($sertifikat_penghargaan)):?>
                   <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
                   <?php else:?>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$ijazah_tk;?>"></td>
+                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/ppdb/'.$sertifikat_penghargaan;?>"></td>
                   <?php endif;?>
                   <td style="text-align:right;">
                         <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
@@ -520,35 +525,35 @@
                                    <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Ijazah TK</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto"/>
+                                            <input type="file" name="filefoto_ijazah_tk"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Akta Kelahiran</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto"/>
+                                            <input type="file" name="filefoto_akta_kelahiran"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Ktp Orang Tua</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto"/>
+                                            <input type="file" name="filefoto_ktp_orang_tua"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Kartu Keluarga</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto"/>
+                                            <input type="file" name="filefoto_kartu_keluarga"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Sertifikat Penghargaan (Jika Ada)</label>
                                         <div class="col-sm-7">
-                                            <input type="file" name="filefoto"/>
+                                            <input type="file" name="filefoto_sertifikat_penghargaan"/>
                                         </div>
                                     </div>
 
